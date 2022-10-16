@@ -1,8 +1,10 @@
 const express = require('express');
 const app = express();
 const port = 8000;
+const cookieParser = require('cookie-parser');
 
 app.use(express.static('./assets'));
+app.use(express.urlencoded({extended: true}));
 
 const expressLayouts = require('express-ejs-layouts');
 app.use(expressLayouts);
@@ -15,6 +17,10 @@ app.set('layout extractScripts',true);
 
 app.use('/',require('./routes/index'));
 app.use('/users',require('./routes/users'));
+
+
+
+app.use(cookieParser());
 
 //set view engine as ejs
 app.set('view engine','ejs');
