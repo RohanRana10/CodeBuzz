@@ -31,12 +31,9 @@ app.use(sassMiddleware({
 
 app.use(express.static('./assets'));
 
-
 //extract styles and scripts from sub pages into the layouts
 app.set('layout extractStyles',true);
 app.set('layout extractScripts',true);
-
-
 
 app.use(cookieParser());
 
@@ -72,6 +69,7 @@ app.use(passport.setAuthenticatedUser);
 
 app.use('/',require('./routes/index'));
 app.use('/users',require('./routes/users'));
+// app.use('/posts', require('./routes/posts'));
 
 app.listen(port,function(err){
     if(err){
