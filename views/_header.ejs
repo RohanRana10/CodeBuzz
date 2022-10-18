@@ -1,12 +1,16 @@
 <header>
-    Page header
-    <ul>
+    <div id="logo">
+        <a href="/"><i class="fa-solid fa-code fa-2x"></i><span id="logo-name">CodeBuzz</span></a>
+    </div>
+
+
+    <div id="right-nav-bar">
         <%if(locals.user){%>
-            <li><a href="/users/profile"><%= user.name %></a></li>
-            <li><a href="/users/sign-out">Sign out</a></li>
+            <span class="nav-item"><a href="/users/profile"><%= user.name %></a></span>
+            <span class="nav-item"><a href="/users/sign-out">Sign out</a></span>
         <%}else{%>
-            <li><a href="/users/sign-up">Sign up</a></li>
-            <li><a href="/users/sign-in">Sign in</a></li>
+            <span class="nav-item"><a href="/users/sign-in">Sign in</a></span>
+            <span class="nav-item"><a href="/users/sign-up">Sign up</a></span>  
         <%}%>
-    </ul>
+    </div>
 </header>

@@ -1,0 +1,23 @@
+footer {
+  height: 8vh;
+  background-color: maroon;
+  color: white;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center; }
+  footer #rights-information {
+    display: flex;
+    align-items: center;
+    margin: 0px 10px; }
+    footer #rights-information i {
+      margin: 0px 10px; }
+  footer .footer-nav-bar {
+    margin: 0px 10px; }
+    footer .footer-nav-bar a {
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: all .3s ease-in-out;
+      color: white; }
+      footer .footer-nav-bar a:hover {
+        border-bottom: 1px solid lightcoral;
+        color: lightcoral; }

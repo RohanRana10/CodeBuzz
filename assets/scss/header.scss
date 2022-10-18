@@ -1,0 +1,46 @@
+header{
+    background-color: maroon;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    height: 8vh;
+    #logo{
+        display: flex;  
+        a{
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            color: white;
+            transition: all .3s ease-in-out;
+            &:hover{
+                color: lightcoral;
+            }
+            #logo-name{
+                font-size: 30px;
+                margin-left: 3px;
+                font-weight: 700;
+            }
+            i{
+                margin: 0px 5px 0px 10px;
+            }
+        }
+        
+    }
+    #right-nav-bar{
+        display: flex;
+        align-items: center;
+        font-weight: 700;
+        font-size: 30px;
+        a{
+            color: white;
+            text-decoration: none;
+            transition: all .3s ease-in-out;
+            &:hover{
+                color: lightcoral;
+            }
+        }
+        .nav-item{
+            padding-right: 15px;
+        }
+    }
+}
