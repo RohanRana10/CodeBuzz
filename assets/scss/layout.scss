@@ -3,6 +3,12 @@ body{
     padding: 0;
     /* text-align: center; */
     #layout-main{
-        height: 90vh;
+        min-height: 84vh;
+        h1{
+            margin: 0;
+        }
+    }
+    #layout-main{
+        background-color: antiquewhite;
     }
 }

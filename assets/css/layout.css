@@ -3,4 +3,8 @@ body {
   padding: 0;
   /* text-align: center; */ }
   body #layout-main {
-    height: 90vh; }
+    min-height: 84vh; }
+    body #layout-main h1 {
+      margin: 0; }
+  body #layout-main {
+    background-color: antiquewhite; }
