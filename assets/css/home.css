@@ -8,10 +8,47 @@
     width: 80%;
     padding: 10px; }
     #home-sections-container #feed-posts #create-post-form {
-      background-color: brown;
-      width: 70%;
+      margin-top: 10px;
+      min-width: 760px;
       display: flex;
+      align-items: center;
       justify-content: center; }
+      #home-sections-container #feed-posts #create-post-form #new-post-form {
+        display: flex;
+        align-items: center;
+        justify-content: center; }
+      #home-sections-container #feed-posts #create-post-form #textarea {
+        border-radius: 10px;
+        font-size: 15px;
+        padding: 5px;
+        margin-left: 10px; }
+      #home-sections-container #feed-posts #create-post-form #submit {
+        height: 50px;
+        margin: 0px 9px 0px 9px;
+        border-radius: 10px;
+        width: 90px;
+        background-color: brown;
+        color: white;
+        font-size: 15px;
+        border: 2px solid transparent;
+        transition: all .3s ease-in-out; }
+        #home-sections-container #feed-posts #create-post-form #submit:hover {
+          background-color: white;
+          color: brown;
+          border: 2px solid brown; }
+    #home-sections-container #feed-posts #post-list-container {
+      min-width: 50%; }
+      #home-sections-container #feed-posts #post-list-container ul {
+        list-style-type: none;
+        color: white;
+        list-style-position: inside;
+        padding-left: 0; }
+        #home-sections-container #feed-posts #post-list-container ul li {
+          padding: 5px 20px;
+          background-color: brown;
+          border-radius: 10px;
+          margin: 10px 10px 25px 10px;
+          max-width: 700px; }
   #home-sections-container #user-friends {
     width: 20%;
     padding: 10px;

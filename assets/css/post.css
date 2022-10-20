@@ -1,0 +1,58 @@
+#post-content {
+  display: inline-block;
+  background-color: white;
+  color: black;
+  border-radius: 10px;
+  width: 100%;
+  min-height: 70px;
+  margin: 15px 0px;
+  position: relative; }
+  #post-content #delete-button {
+    position: absolute;
+    top: 10px;
+    right: 10px; }
+    #post-content #delete-button i {
+      color: brown;
+      font-size: 18px; }
+  #post-content #content {
+    display: inline-block;
+    margin: 5px 20px;
+    word-break: break-all;
+    font-size: 15px; }
+  #post-content #user-name {
+    margin: 10px 20px 3px 20px;
+    font-weight: 700;
+    font-size: 18px;
+    color: brown; }
+
+.post-comments {
+  background-color: white;
+  margin: 0px 0px 15px 0px;
+  border-radius: 10px;
+  display: flex;
+  min-width: 660px;
+  flex-direction: column;
+  justify-content: center; }
+  .post-comments #comment-form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center; }
+  .post-comments #comment-box {
+    height: 30px;
+    margin: 10px 5px;
+    width: 550px;
+    border-radius: 25px;
+    border: 1px solid brown;
+    padding-left: 10px; }
+  .post-comments #submit-comment {
+    height: 35px;
+    border-radius: 10px;
+    background-color: brown;
+    color: white;
+    border: 2px solid transparent;
+    transition: all .3s ease-in-out; }
+    .post-comments #submit-comment:hover {
+      background-color: white;
+      color: brown;
+      border: 2px solid brown; }

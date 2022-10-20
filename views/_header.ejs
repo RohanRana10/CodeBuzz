@@ -6,7 +6,7 @@
 
     <div id="right-nav-bar">
         <%if(locals.user){%>
-            <span class="nav-item"><a href="/users/profile/<%= user._id%>"><%= user.name %></a></span>
+            <span class="nav-item"><a href="/users/profile/<%= user._id %>"><%= user.name %></a></span>
             <span class="nav-item"><a href="/users/sign-out">Sign out</a></span>
         <%}else{%>
             <span class="nav-item"><a href="/users/sign-in">Sign in</a></span>

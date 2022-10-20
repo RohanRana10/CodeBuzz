@@ -1,4 +1,5 @@
-<li>
+<link rel="stylesheet" href="/css/comment.css">
+<!-- <li>
     <p>
         <%if(locals.user && comment.user.id == locals.user.id){ %>
             <small>
@@ -11,4 +12,19 @@
             <%= comment.user.name %>
         </small>
     </p>
-</li>
+</li> -->
+<div id="comment">
+    <li>
+        <p>
+            <div id="user-name">
+                <%= comment.user.name %>
+            </div>
+            <%if(locals.user && comment.user.id == locals.user.id){ %>
+                <small id="delete-button">
+                    <a href="/comments/destroy/<%= comment._id %>"><i class="fa-regular fa-trash-can"></i></a>
+                </small>
+            <%}%>
+            <%= comment.content %>
+        </p>
+    </li>
+</div>
