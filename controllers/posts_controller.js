@@ -1,33 +1,54 @@
 const Post = require('../models/post');
 const Comment = require('../models/comment');
 
-module.exports.createPost = function(req,res){
-    Post.create({
-        content: req.body.content,
-        user: req.user._id
-    },function(err,post){
-        if(err){
-            console.log(`Error in creating a post: ${err}`);
-            return;
+module.exports.createPost = async function(req,res){
+    try {
+        let post = await Post.create({
+            content: req.body.content,
+            user: req.user._id,
+        });
+        post = await post.populate('user', '-password -createdAt -updatedAt -__v -email -_id');
+        if(req.xhr){
+            return res.status(200).json({
+                data: {
+                    post: post
+                },
+                message: "Post created!"
+            });
         }
+        req.flash('success','Post published');
         return res.redirect('back');
-    });
+    } catch (error) {
+        req.flash('error','Error in publishing post');
+        return;
+    }
 }
 
-module.exports.destroyPost = function(req,res){
-    Post.findById(req.params.id, function(err,post){
+module.exports.destroyPost = async function(req,res){
+    try {
+        let post = await Post.findById(req.params.id);
         // user.id converts to string for using == , instead ofuser._id
         if(post.user == req.user.id){
             post.remove();
-            Comment.deleteMany({post: req.params.id},function(err){
-                if(err){
-                    console.log(`Error deleting the asociated comments: ${err}`);
-                    return;
-                }
-                return res.redirect('back');
-            });
+            await Comment.deleteMany({post: req.params.id});
+
+            if(req.xhr){
+                return res.status(200).json({
+                    data: {
+                        post_id: req.params.id
+                    },
+                    message: "Post deleted!"
+                });
+            }
+
+            req.flash('success','Post and associated comments deleted');
+            return res.redirect('back');
         }else{
+            req.flash('error','Not authorized to delete this post');
             return res.redirect('back');
         }
-    })
+    } catch (error) {
+        req.flash('error','Error in deleting post');
+        return;
+    }
 }
