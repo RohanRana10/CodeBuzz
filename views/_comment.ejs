@@ -13,15 +13,15 @@
         </small>
     </p>
 </li> -->
-<div id="comment">
-    <li>
+<div class="comment">
+    <li id="comment-<%= comment._id %>">
         <p>
             <div id="user-name">
                 <%= comment.user.name %>
             </div>
             <%if(locals.user && comment.user.id == locals.user.id){ %>
                 <small id="delete-button">
-                    <a href="/comments/destroy/<%= comment._id %>"><i class="fa-regular fa-trash-can"></i></a>
+                    <a class="delete-comment-button" href="/comments/destroy/<%= comment._id %>"><i class="fa-regular fa-trash-can"></i></a>
                 </small>
             <%}%>
             <%= comment.content %>

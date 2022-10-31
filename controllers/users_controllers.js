@@ -1,4 +1,6 @@
 const User = require('../models/user');
+const path = require('path');
+const fs = require('fs');
 
 module.exports.profile = function(req,res){
     User.findById(req.params.id,function(err,user){
@@ -60,18 +62,46 @@ module.exports.createUser = function(req,res){
     });
 }
 
-module.exports.updateUser = function(req,res){
+module.exports.updateUser = async function(req,res){
+    // if(req.user.id == req.params.id){
+    //     User.findByIdAndUpdate(req.params.id,req.body,function(err,user){
+    //         req.flash('success','User details updated');
+    //         return res.redirect('back');
+    //     });
+    // }
+    // else{
+    //     req.flash('error','Not authorized to update user');
+    //     return res.redirect('back');
+    // }
     if(req.user.id == req.params.id){
-        User.findByIdAndUpdate(req.params.id,req.body,function(err,user){
-            req.flash('success','User details updated');
-            return res.redirect('back');
-        });
+        try {
+            let user = await User.findById(req.params.id);
+            User.uploadedAvatar(req,res,function(err){
+                if(err){
+                    console.log(`Multer Error: ${err}`);
+                }
+                user.name = req.body.name;
+                user.email = req.body.email;
+                if(req.file){
+                    if(user.avatar){
+                        fs.unlinkSync(path.join(__dirname, '..',user.avatar));
+                    }
+                    //saves the path of uploaded file into the avatar field in the user
+                    user.avatar = User.avatar_path + '/' + req.file.filename;
+                }
+                user.save();
+                return res.redirect('back');
+            })
+        }
+        catch (error) {
+            req.flash('error','Error in updating user');
+            return;
+        }
     }
     else{
         req.flash('error','Not authorized to update user');
         return res.redirect('back');
     }
-    
 }
 
 //sign-in

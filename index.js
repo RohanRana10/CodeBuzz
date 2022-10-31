@@ -76,6 +76,8 @@ app.use(passport.setAuthenticatedUser);
 
 app.use('/',require('./routes/index'));
 app.use('/users',require('./routes/users'));
+//make the uploads path availabe to the browzer
+app.use('/uploads',express.static(__dirname + '/uploads'))
 // app.use('/posts', require('./routes/posts'));
 
 app.listen(port,function(err){

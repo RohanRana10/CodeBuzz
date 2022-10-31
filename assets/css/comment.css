@@ -1,15 +1,15 @@
-#comment li {
+.comment li {
   background-color: lightcoral !important;
   position: relative; }
-  #comment li #user-name {
+  .comment li #user-name {
     color: brown;
     margin: 5px 20px 3px 0px;
     font-size: 16px;
     font-weight: bold; }
-  #comment li #delete-button {
+  .comment li #delete-button {
     position: absolute;
     top: 10px;
     right: 10px; }
-    #comment li #delete-button i {
+    .comment li #delete-button i {
       color: white;
       font-size: 18px; }

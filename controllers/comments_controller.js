@@ -13,6 +13,15 @@ module.exports.createComment = async function(req,res){
             //update the comment in post's comments array
             post.comments.push(comment);
             post.save();
+
+            if(req.xhr){
+                return res.status(200).json({
+                    data: {
+                        comment: comment
+                    },
+                    message: "Comment Published!"
+                });
+            }
             req.flash('success','Comment published');
             return res.redirect('back');
         }
