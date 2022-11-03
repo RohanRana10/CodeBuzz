@@ -16,6 +16,7 @@ passport.use(new LocalStrategy({
                 req.flash('error','Invalid username or password');
                 return done(null, false);
             }
+            //set user in cookie
             return done(null, user);
         });
     }

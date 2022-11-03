@@ -1,6 +1,29 @@
 <link rel="stylesheet" href="/css/user_profile.css">
-
-<img src="<%= user.avatar %>" alt="<%= user.name %>" width="200px" height="220px">
+<div id="profile-info-container">
+    <div id="profile-info">
+        <img src="<%= profile_user.avatar %>" alt="<%= profile_user.name %>" width="200px" height="220px">
+        <%if(locals.user.id == profile_user.id){%>
+            <p><%= profile_user.name %></p>
+            <p><%= profile_user.email %></p>
+            <form action="/users/update/<%= profile_user.id %>"  method="post" enctype="multipart/form-data">
+                <input type="text" name="name" placeholder="Your Name" value="<%= profile_user.name %>" required>
+                <input type="text" name="email" placeholder="Your Email" value="<%= profile_user.email %>" required>
+                <div id="#upload-file-container">
+                    <label for="qw"> Update Profile Picture:</label>
+                    <input type="file" name="avatar" id="qw" placeholder="Profile Picture">
+                </div>
+                <!-- <label for="qw"> Update Profile Picture</label>
+                <input type="file" name="avatar" id="qw" placeholder="Profile Picture"> -->
+                <input type="submit" value="Update">
+            </form>
+        <%}else{%>
+            <p><%= profile_user.name %></p>
+            <p><%= profile_user.email %></p>
+        <%}%>
+    </div>
+    
+</div>
+<!-- <img src="<%= user.avatar %>" alt="<%= user.name %>" width="200px" height="220px">
 <%if(locals.user.id == profile_user.id){%>
     <p><%= profile_user.name %></p>
     <p><%= profile_user.email %></p>
@@ -13,4 +36,4 @@
 <%}else{%>
     <p><%= profile_user.name %></p>
     <p><%= profile_user.email %></p>
-<%}%>
+<%}%> -->
