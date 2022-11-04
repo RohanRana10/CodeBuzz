@@ -1,11 +1,18 @@
-<h1>Sign up!</h1>
-<form action="/users/create" method="POST">
-    <input type="text" name="name" placeholder="Your Name" required>
-    <input type="email" name="email" placeholder="Your Email" required>
-    <input type="password" name="password" placeholder="Password" required>
-    <input type="password" name="confirm_password" placeholder="Confirm Password" required>
-    <input type="submit" value="Sign up">
-</form>
-<p>
-    <a href="/users/auth/google">Google Sign in/Sign up</a>
-</p>
+<link rel="stylesheet" href="/css/user_sign_up.css">
+<!-- <h1>Sign up!</h1> -->
+<div id="sign-up-container">
+    <div id="sign-up-content">
+        <img id="user-image" src="https://gptckannur.ac.in/wp-content/uploads/2021/09/profile-pic-placeholder.jpg">
+        <form action="/users/create" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <input type="password" name="confirm_password" placeholder="Confirm Password" required>
+            <input type="submit" value="Sign up">
+        </form>
+        <p id="options">or connect with</p>
+        <p>
+            <a href="/users/auth/google"><button id="google-sign-in"><span><i class="fa-brands fa-google"></i></span>Google</button></a>
+        </p>
+    </div>
+</div>

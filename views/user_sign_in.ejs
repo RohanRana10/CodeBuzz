@@ -1,9 +1,16 @@
-<h1>Sign in!</h1>
-<form action="/users/create-session" method="post">
-    <input type="email" name="email" placeholder="Your Email" required>
-    <input type="password" name="password" placeholder="Your Password" required>
-    <input type="submit" value="Sign in">
-</form>
-<p>
-    <a href="/users/auth/google">Google Sign in/Sign up</a>
-</p>
+<link rel="stylesheet" href="/css/user_sign_in.css">
+<div id="sign-in-container">
+    <div id="sign-in-content">
+        <img id="user-image" src="https://gptckannur.ac.in/wp-content/uploads/2021/09/profile-pic-placeholder.jpg">
+        <form action="/users/create-session" method="post">
+            <input type="email" name="email" placeholder="Your Email" required>
+            <input type="password" name="password" placeholder="Your Password" required>
+            <input type="submit" value="Sign in">
+        </form>
+        <p id="options">or connect with</p>
+        <p>
+            <a href="/users/auth/google"><button id="google-sign-in"><span><i class="fa-brands fa-google"></i></span>Google</button></a>
+        </p>
+        
+    </div>
+</div>

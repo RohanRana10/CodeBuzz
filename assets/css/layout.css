@@ -7,4 +7,4 @@ body {
     body #layout-main h1 {
       margin: 0; }
   body #layout-main {
-    background-color: antiquewhite; }
+    background: linear-gradient(to right, #c6ffdd, #fbd786, #f7797d); }
