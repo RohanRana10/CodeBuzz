@@ -20,8 +20,10 @@ module.exports.home = async function(req,res){
             path: 'comments',
             populate: {
                 path: 'user'
+            },populate: {
+                path: 'likes'//for the comments
             }
-        });
+        }).populate('likes'); //for the post
         let users = await User.find({});
 
         return res.render('home',{

@@ -24,6 +24,17 @@
     font-weight: 700;
     font-size: 18px;
     color: brown; }
+  #post-content #likes-container {
+    position: absolute;
+    top: 40px;
+    right: 10px; }
+    #post-content #likes-container a:link {
+      text-decoration: none;
+      color: gray; }
+    #post-content #likes-container a:visited {
+      text-decoration: none; }
+    #post-content #likes-container a:hover {
+      color: lightcoral; }
 
 .post-comments {
   background-color: white;

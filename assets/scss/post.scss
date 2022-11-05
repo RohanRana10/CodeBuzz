@@ -29,6 +29,21 @@
         color: brown;
         // font-family: sans-serif;
     }
+    #likes-container{
+        position: absolute;
+        top: 40px;
+        right: 10px;
+        a:link {
+            text-decoration: none;
+            color: gray;
+        }
+        a:visited {
+            text-decoration: none;
+        }
+        a:hover {
+            color: lightcoral;
+        }
+    }
 }
 .post-comments{
     background-color: white;

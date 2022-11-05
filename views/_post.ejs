@@ -12,6 +12,16 @@
         <div id="content">
             <%= post.content %>
         </div>
+        <br>
+        <div id="likes-container">
+            <% if(locals.user){%>
+                <a class="toggle-like-button" data-likes="<%= post.likes.length %>" href="/likes/toggle/?id=<%= post._id%>&type=Post">
+                    <%= post.likes.length %> <i class="fa-solid fa-thumbs-up"></i>
+                </a>
+            <%}else{%>
+                <%= post.likes.length %> <i class="fa-solid fa-thumbs-up"></i>
+            <%}%>
+        </div>
     </div>
     
         <div class="post-comments">

@@ -28,8 +28,13 @@
 </div>
 <script src="/js/home_posts.js"></script>
 <script src="/js/home_comments.js"></script>
+<!-- import the script file for toggle likes, and run it over for all present posts and comments on the post -->
+<script src="js/toggle_likes.js"></script>
+<script>
+    $('.toggle-like-button').each(function(){
+        let self = this;
+        let toggleLike = new ToggleLike(self);
+    });
+</script>
 
-<!-- <h1>
-    <%= title %>
-</h1> -->
 
